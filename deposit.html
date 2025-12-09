@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>شحن الرصيد - الفارس</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1 class="title" style="font-size:20px;">شحن الرصيد (USDT TRC20)</h1>
+      <p class="subtitle">
+        اختر مبلغ الشحن. أقل مبلغ هو 20 USDT. كل 100 USDT = 3$ لكل إعلان (إعلانين يومياً).
+      </p>
+
+      <div class="form-group">
+        <label for="amount">المبلغ (USDT)</label>
+        <input id="amount" type="number" min="20" step="10" value="20" />
+      </div>
+
+      <div class="form-group">
+        <label>عنوان محفظة المنصّة (TRC20)</label>
+        <div class="small" style="word-break:break-all;"><strong>TPNoGerv1EMBSdrs9Yca93eCQUVsoNiRvq</strong></div>
+      </div>
+
+      <div class="form-group">
+        <label for="txid">معرّف العملية TXID</label>
+        <input id="txid" type="text" placeholder="انسخ TXID من المنصّة التي حولت منها" />
+      </div>
+
+      <div id="dep-msg" class="alert"></div>
+
+      <button class="btn btn-primary" id="dep-submit">إرسال طلب الشحن</button>
+      <button class="btn btn-outline" onclick="window.location.href='dashboard.html'">رجوع للوحة التحكم</button>
+
+      <div class="list" id="dep-list"></div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", initDepositPage);
+  </script>
+</body>
+</html>

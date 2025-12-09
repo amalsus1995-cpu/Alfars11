@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>سحب الأرباح - الفارس</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1 class="title" style="font-size:20px;">طلب سحب الأرباح</h1>
+      <p class="subtitle">
+        يمكنك طلب سحب جزء من رصيدك. تتم الموافقة يدوياً من لوحة الإدارة.
+      </p>
+
+      <div class="form-group">
+        <label>الرصيد المتاح (دولار)</label>
+        <input id="wd-balance" type="text" disabled />
+      </div>
+
+      <div class="form-group">
+        <label for="wd-amount">المبلغ المطلوب سحبه (دولار)</label>
+        <input id="wd-amount" type="number" min="1" step="1" />
+      </div>
+
+      <div class="form-group">
+        <label for="wd-wallet">عنوان محفظتك (USDT TRC20)</label>
+        <input id="wd-wallet" type="text" placeholder="اكتب عنوان محفظتك للاستلام" />
+      </div>
+
+      <div id="wd-msg" class="alert"></div>
+
+      <button class="btn btn-primary" id="wd-submit">إرسال طلب السحب</button>
+      <button class="btn btn-outline" onclick="window.location.href='dashboard.html'">رجوع للوحة التحكم</button>
+
+      <div class="list" id="wd-list"></div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", initWithdrawPage);
+  </script>
+</body>
+</html>

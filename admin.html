@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>لوحة الإدارة - الفارس</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1 class="title">لوحة إدارة الفارس</h1>
+      <p class="subtitle">
+        هذه اللوحة مخصّصة لصاحب الموقع فقط لمراجعة الشحنات وطلبات السحب.
+      </p>
+
+      <div id="admin-login">
+        <div class="form-group">
+          <label for="admin-pass">كلمة مرور الإدارة</label>
+          <input id="admin-pass" type="password" placeholder="أدخل كلمة المرور" />
+        </div>
+        <div id="admin-msg" class="alert alert-error"></div>
+        <button class="btn btn-primary" id="admin-login-btn">دخول</button>
+      </div>
+
+      <div id="admin-panel" style="display:none;">
+        <h3 class="subtitle" style="margin-top:10px;">طلبات الشحن</h3>
+        <div class="list" id="admin-dep-list"></div>
+
+        <h3 class="subtitle" style="margin-top:10px;">طلبات السحب</h3>
+        <div class="list" id="admin-wd-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", initAdminPage);
+  </script>
+</body>
+</html>

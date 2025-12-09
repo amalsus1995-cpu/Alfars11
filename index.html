@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>الفارس - تسجيل الدخول</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1 class="title">منصة الفارس للربح من الإعلانات</h1>
+      <p class="subtitle">اشحن USDT، ادخل يومياً، وشاهد الإعلانات لتحصل على أرباحك.</p>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>أقل شحن 20 USDT – كل 100 = 3$ لكل إعلان</span>
+      </div>
+
+      <div class="form-group">
+        <label for="auth-mode">العملية</label>
+        <select id="auth-mode">
+          <option value="login">تسجيل الدخول</option>
+          <option value="register">إنشاء حساب جديد</option>
+        </select>
+      </div>
+
+      <div id="name-group" class="form-group" style="display:none;">
+        <label for="name">الاسم الكامل</label>
+        <input id="name" type="text" placeholder="مثال: أحمد الفارس" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني</label>
+        <input id="email" type="email" placeholder="example@mail.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">كلمة المرور</label>
+        <input id="password" type="password" placeholder="********" />
+      </div>
+
+      <div id="auth-error" class="alert alert-error"></div>
+      <div id="auth-success" class="alert alert-success"></div>
+
+      <button class="btn btn-primary" id="auth-submit">متابعة</button>
+
+      <p class="small">
+        النسخة الحالية تعتمد على Supabase كقاعدة بيانات حقيقية، لكنها ما زالت تحتاج مراجعة
+        قانونية وأمنية قبل استخدام أموال حقيقية.
+      </p>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", initAuthPage);
+  </script>
+</body>
+</html>
